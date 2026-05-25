@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты | AESTHETICA - Студия дизайна интерьеров</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">
+                <div class="logo-hexagon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+            </div>
+            <span class="logo-text">AESTHETICA</span>
+        </a>
+
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html" class="nav-link">Главная</a></li>
+            <li><a href="about.html" class="nav-link">О нас</a></li>
+            <li><a href="services.html" class="nav-link">Услуги</a></li>
+            <li><a href="portfolio.html" class="nav-link">Портфолио</a></li>
+            <li><a href="process.html" class="nav-link">Этапы работы</a></li>
+            <li><a href="pricing.html" class="nav-link">Цены</a></li>
+            <li><a href="reviews.html" class="nav-link">Отзывы</a></li>
+            <li><a href="contacts.html" class="nav-link active">Контакты</a></li>
+        </ul>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero секция -->
+    <section class="page-hero contacts-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Контакты</h1>
+            <p class="hero-subtitle">Свяжитесь с нами для обсуждения вашего проекта</p>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="section">
+        <div class="container">
+            <div class="contacts-grid">
+                <div class="contact-info fade-in">
+                    <h2 class="section-title">Наши контакты</h2>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h4>Адрес</h4>
+                            <p>Москва, ул. Дизайнерская, 15</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h4>Телефон</h4>
+                            <p>+7 (495) 123-45-67</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>info@aesthetica.ru</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🕐</div>
+                        <div class="contact-details">
+                            <h4>Режим работы</h4>
+                            <p>Пн-Пт: 10:00 - 19:00</p>
+                            <p>Сб-Вс: по записи</p>
+                        </div>
+                    </div>
+                    <div class="social-links-large">
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Pinterest</a>
+                        <a href="#" class="social-link">Telegram</a>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper fade-in">
+                    <h2 class="section-title">Оставить заявку</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Телефон" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <select>
+                                <option value="" disabled selected>Интересующая услуга</option>
+                                <option value="apartment">Дизайн квартиры</option>
+                                <option value="house">Дизайн дома</option>
+                                <option value="commercial">Коммерческий дизайн</option>
+                                <option value="landscape">Ландшафтный дизайн</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Сообщение" rows="5"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Карта -->
+    <section class="section map-section">
+        <div class="container">
+            <div class="map-placeholder fade-in" style="background: linear-gradient(135deg, #7A8B6E 0%, #C6DEF1 100%);">
+                <div class="map-content">
+                    <h3>Наша студия</h3>
+                    <p>Москва, ул. Дизайнерская, 15</p>
+                    <p>Приезжайте на консультацию!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <div class="logo-hexagon small">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <span>AESTHETICA</span>
+                    </div>
+                    <p>Студия дизайна интерьеров премиум класса</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="portfolio.html">Портфолио</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Контакты</h4>
+                    <p>Москва, ул. Дизайнерская, 15</p>
+                    <p>+7 (495) 123-45-67</p>
+                    <p>info@aesthetica.ru</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Соцсети</h4>
+                    <div class="social-links">
+                        <a href="#">Instagram</a>
+                        <a href="#">Facebook</a>
+                        <a href="#">Pinterest</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AESTHETICA. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
