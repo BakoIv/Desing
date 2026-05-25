@@ -1,75 +1,172 @@
-// AESTHETICA - Premium Design Studio JavaScript
+// Mobile Navigation Toggle
+const mobileToggle = document.querySelector('.mobile-toggle');
+const navMenu = document.querySelector('.nav-menu');
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Мобильное меню
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('navMenu');
-    
-    if (hamburger && navMenu) {
-        hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-        
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function() {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
+if (mobileToggle) {
+    mobileToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        mobileToggle.classList.toggle('active');
+    });
+}
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        mobileToggle.classList.remove('active');
+    });
+});
+
+// Header Scroll Effect
+const header = document.querySelector('.header');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
     }
-    
-    // Навбар при скролле
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
+});
+
+// Fade In Animation on Scroll
+const fadeElements = document.querySelectorAll('.fade-in');
+
+const fadeInOnScroll = () => {
+    fadeElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementTop < windowHeight - 100) {
+            element.classList.add('visible');
         }
     });
-    
-    // Анимация fade-in
-    const fadeElements = document.querySelectorAll('.fade-in');
-    const fadeInOnScroll = function() {
-        fadeElements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            if (elementTop < window.innerHeight - 100) {
-                element.classList.add('visible');
+};
+
+window.addEventListener('scroll', fadeInOnScroll);
+fadeInOnScroll(); // Check on initial load
+
+// Smooth Scroll for Anchor Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        
+        if (targetId !== '#') {
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                const headerOffset = 80;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    });
+});
+
+// Form Submission Handler
+const contactForm = document.querySelector('.contact-form');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form values
+        const formData = new FormData(contactForm);
+        
+        // Show success message (in real app, send to server)
+        alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.');
+        contactForm.reset();
+    });
+}
+
+// Portfolio Filter (if exists)
+const filterButtons = document.querySelectorAll('[data-filter]');
+const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const filterValue = button.getAttribute('data-filter');
+        
+        portfolioItems.forEach(item => {
+            if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
             }
         });
-    };
-    window.addEventListener('scroll', fadeInOnScroll);
-    fadeInOnScroll();
+        
+        // Update active button
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+    });
+});
+
+// Counter Animation for Stats
+const animateCounter = (element, target, duration = 2000) => {
+    let start = 0;
+    const increment = target / (duration / 16);
     
-    // Счетчики
-    const statNumbers = document.querySelectorAll('.stat-number');
-    const animateCounter = function(element) {
-        const target = parseInt(element.getAttribute('data-target'));
-        const increment = target / 100;
-        let current = 0;
-        const updateCounter = function() {
-            current += increment;
-            if (current < target) {
-                element.textContent = Math.floor(current);
-                requestAnimationFrame(updateCounter);
+    const updateCounter = () => {
+        start += increment;
+        
+        if (start < target) {
+            if (target >= 100) {
+                element.textContent = Math.floor(start) + '+';
             } else {
-                element.textContent = target;
+                element.textContent = Math.floor(start) + '%';
             }
-        };
-        updateCounter();
+            requestAnimationFrame(updateCounter);
+        } else {
+            if (target >= 100) {
+                element.textContent = target + '+';
+            } else {
+                element.textContent = target + '%';
+            }
+        }
     };
     
-    const counterObserver = new IntersectionObserver(function(entries) {
+    updateCounter();
+};
+
+// Trigger counter animation when stats are visible
+const statsSection = document.querySelector('.stats');
+let countersAnimated = false;
+
+if (statsSection) {
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateCounter(entry.target);
-                counterObserver.unobserve(entry.target);
+            if (entry.isIntersecting && !countersAnimated) {
+                countersAnimated = true;
+                const statNumbers = entry.target.querySelectorAll('.stat-number');
+                
+                statNumbers.forEach(stat => {
+                    const text = stat.textContent;
+                    const number = parseInt(text.replace(/\D/g, ''));
+                    
+                    if (!isNaN(number)) {
+                        animateCounter(stat, number);
+                    }
+                });
             }
         });
     }, { threshold: 0.5 });
     
-    statNumbers.forEach(stat => counterObserver.observe(stat));
-    
-    console.log('AESTHETICA website initialized!');
-});
+    observer.observe(statsSection);
+}
+
+// Parallax Effect for Hero Background
+const heroBg = document.querySelector('.hero-bg');
+
+if (heroBg) {
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        heroBg.style.transform = `translateY(${scrolled * 0.5}px)`;
+    });
+}
+
+console.log('AESTHETICA Studio - Website loaded successfully');

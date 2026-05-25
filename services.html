@@ -3,187 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Услуги | AESTHETICA - Студия дизайна интерьеров</title>
+    <title>PAGETITLE | AESTHETICA - Студия дизайна интерьеров</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Навигация -->
-    <nav class="navbar" id="navbar">
-        <a href="index.html" class="logo">
-            <div class="logo-icon">
-                <div class="logo-hexagon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                    </svg>
-                </div>
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"></div>
+                AESTHETICA
+            </a>
+            <ul class="nav-menu">
+                <li><a href="about.html" class="nav-link">О нас</a></li>
+                <li><a href="services.html" class="nav-link">Услуги</a></li>
+                <li><a href="portfolio.html" class="nav-link">Портфолио</a></li>
+                <li><a href="process.html" class="nav-link">Этапы</a></li>
+                <li><a href="pricing.html" class="nav-link">Цены</a></li>
+                <li><a href="reviews.html" class="nav-link">Отзывы</a></li>
+                <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+            </ul>
+            <div class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-            <span class="logo-text">AESTHETICA</span>
-        </a>
+        </nav>
+    </header>
 
-        <ul class="nav-menu" id="navMenu">
-            <li><a href="index.html" class="nav-link">Главная</a></li>
-            <li><a href="about.html" class="nav-link">О нас</a></li>
-            <li><a href="services.html" class="nav-link active">Услуги</a></li>
-            <li><a href="portfolio.html" class="nav-link">Портфолио</a></li>
-            <li><a href="process.html" class="nav-link">Этапы работы</a></li>
-            <li><a href="pricing.html" class="nav-link">Цены</a></li>
-            <li><a href="reviews.html" class="nav-link">Отзывы</a></li>
-            <li><a href="contacts.html" class="nav-link">Контакты</a></li>
-        </ul>
-
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+    <section class="hero" style="min-height: 60vh;">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Hero">
         </div>
-    </nav>
-
-    <!-- Hero секция -->
-    <section class="page-hero services-hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Наши услуги</h1>
-            <p class="hero-subtitle">Полный спектр дизайнерских решений</p>
-        </div>
-    </section>
-
-    <!-- Услуги -->
-    <section class="section">
         <div class="container">
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-icon">🏠</div>
-                    <h3>Дизайн квартир</h3>
-                    <p>Создание уникальных интерьеров для городских квартир с учетом эргономики и современных трендов</p>
-                    <a href="pricing.html" class="service-link">Узнать стоимость →</a>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">🏡</div>
-                    <h3>Дизайн домов и коттеджей</h3>
-                    <p>Комплексное проектирование загородных residences с продуманной планировкой</p>
-                    <a href="pricing.html" class="service-link">Узнать стоимость →</a>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">🏢</div>
-                    <h3>Дизайн офисов</h3>
-                    <p>Функциональные и стильные офисные пространства для продуктивной работы</p>
-                    <a href="pricing.html" class="service-link">Узнать стоимость →</a>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">🍽️</div>
-                    <h3>Дизайн ресторанов</h3>
-                    <p>Атмосферные интерьеры для заведений общественного питания</p>
-                    <a href="pricing.html" class="service-link">Узнать стоимость →</a>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">📐</div>
-                    <h3>Архитектура</h3>
-                    <p>Проектирование зданий и сооружений с учетом всех норм и требований</p>
-                    <a href="pricing.html" class="service-link">Узнать стоимость →</a>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">🌿</div>
-                    <h3>Ландшафтный дизайн</h3>
-                    <p>Гармоничное благоустройство приусадебных участков и территорий</p>
-                    <a href="pricing.html" class="service-link">Узнать стоимость →</a>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">🛋️</div>
-                    <h3>Дизайн мебели</h3>
-                    <p>Разработка индивидуальной мебели по вашим размерам и предпочтениям</p>
-                    <a href="pricing.html" class="service-link">Узнать стоимость →</a>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">✨</div>
-                    <h3>Премиальный дизайн</h3>
-                    <p>Эксклюзивные решения для взыскательных клиентов с особыми требованиями</p>
-                    <a href="pricing.html" class="service-link">Узнать стоимость →</a>
-                </div>
+            <div class="hero-content fade-in">
+                <span class="hero-subtitle">HEROSUBTITLE</span>
+                <h1 class="hero-title">HEROTITLE</h1>
             </div>
         </div>
     </section>
 
-    <!-- Дополнительные услуги -->
-    <section class="section additional-services">
-        <div class="container">
-            <h2 class="section-title center">Дополнительные услуги</h2>
-            <div class="additional-grid">
-                <div class="additional-item fade-in">
-                    <h4>Авторский надзор</h4>
-                    <p>Контроль реализации проекта на всех этапах строительства</p>
-                </div>
-                <div class="additional-item fade-in">
-                    <h4>Комплектация объекта</h4>
-                    <p>Подбор и закупка материалов, мебели и оборудования</p>
-                </div>
-                <div class="additional-item fade-in">
-                    <h4>3D визуализация</h4>
-                    <p>Фотореалистичные изображения будущего интерьера</p>
-                </div>
-                <div class="additional-item fade-in">
-                    <h4>Технический надзор</h4>
-                    <p>Контроль качества строительных работ</p>
-                </div>
-                <div class="additional-item fade-in">
-                    <h4>Инженерные проекты</h4>
-                    <p>Проектирование электрики, водоснабжения, вентиляции</p>
-                </div>
-                <div class="additional-item fade-in">
-                    <h4>Декорирование</h4>
-                    <p>Финальное оформление интерьера текстилем и аксессуарами</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    CONTENTHERE
 
-    <!-- CTA секция -->
-    <section class="section cta-section">
-        <div class="container">
-            <div class="cta-content fade-in">
-                <h2>Готовы обсудить ваш проект?</h2>
-                <p>Запишитесь на бесплатную консультацию с дизайнером</p>
-                <a href="contacts.html" class="btn btn-primary">Связаться с нами</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-column">
-                    <div class="footer-logo">
-                        <div class="logo-hexagon small">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                            </svg>
-                        </div>
-                        <span>AESTHETICA</span>
-                    </div>
-                    <p>Студия дизайна интерьеров премиум класса</p>
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon"></div>
+                        AESTHETICA
+                    </a>
+                    <p>Студия дизайна интерьеров премиум класса.</p>
                 </div>
                 <div class="footer-column">
-                    <h4>Навигация</h4>
-                    <ul>
-                        <li><a href="index.html">Главная</a></li>
+                    <h4 class="footer-title">Навигация</h4>
+                    <ul class="footer-links">
                         <li><a href="about.html">О нас</a></li>
                         <li><a href="services.html">Услуги</a></li>
                         <li><a href="portfolio.html">Портфолио</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4>Контакты</h4>
-                    <p>Москва, ул. Дизайнерская, 15</p>
-                    <p>+7 (495) 123-45-67</p>
-                    <p>info@aesthetica.ru</p>
-                </div>
-                <div class="footer-column">
-                    <h4>Соцсети</h4>
-                    <div class="social-links">
-                        <a href="#">Instagram</a>
-                        <a href="#">Facebook</a>
-                        <a href="#">Pinterest</a>
-                    </div>
+                    <h4 class="footer-title">Контакты</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+74951234567">+7 (495) 123-45-67</a></li>
+                        <li><a href="mailto:info@aesthetica.design">info@aesthetica.design</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -191,7 +79,6 @@
             </div>
         </div>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
